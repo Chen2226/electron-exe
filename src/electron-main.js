@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain, dialog } = require("electron");
 const path = require("path");
+const initIpcMain = require("./electron-utils/ipcMain.js");
 
 let mainWindow; // 用来保存主窗口对象的引用
 
@@ -7,17 +8,19 @@ let mainWindow; // 用来保存主窗口对象的引用
 app.on("ready", () => {
   // 创建主窗口
   mainWindow = new BrowserWindow({
-    width: 800,
-    minWidth: 800,
-    height: 600,
-    minHeight: 600,
+    width: 1000,
+    minWidth: 1000,
+    height: 800,
+    minHeight: 800,
     frame: false,
+    resizable: true,
     transparent: true,
-    backgroundColor: '#00000000',
+    backgroundColor: "#00000000",
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,
       nodeIntegration: true,
+      enableRemoteModule: true,
     },
   });
 
@@ -36,6 +39,8 @@ app.on("ready", () => {
   mainWindow.on("closed", () => {
     mainWindow = null;
   });
+
+  initIpcMain(app, mainWindow);
 });
 
 // 当全部窗口关闭时退出。

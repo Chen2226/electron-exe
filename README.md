@@ -1,24 +1,25 @@
-# c
+# electron+vue+naiveui应用模板
 
-## Project setup
+## 安装依赖
 ```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
+npm install
 ```
 
-### Compiles and minifies for production
+### 运行vue
 ```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
+npm run serve
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 运行electron
+```
+npm run start
+```
+
+### 打包exe
+```
+npm run dist
+```
+
+
+### 注意事项
+asarmor这个依赖需要先安装一下Visual Studio2022，勾选C++桌面开发
