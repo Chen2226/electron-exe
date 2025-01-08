@@ -3,7 +3,7 @@ const path = require("path");
 const initIpcMain = require("./electron-utils/ipcMain.js");
 
 let mainWindow; // 用来保存主窗口对象的引用
-
+app.disableHardwareAcceleration();
 // 当 Electron 完成初始化并准备创建浏览器窗口时被调用
 app.on("ready", () => {
   // 创建主窗口

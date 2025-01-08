@@ -36,16 +36,16 @@
     "vuex": "^4.1.0"
   },
   "build": {
-    "appId": "Chen",
-    "productName": "Chen",
+    "appId": "C",
+    "productName": "C",
     "icon": "public/favicon.ico",
-    "copyright": "Chen © 2024",
+    "copyright": "C © 2025",
     "compression": "maximum",
     "asar": true,
     "win": {
       "icon": "public/favicon.ico",
       "target": "nsis",
-      "legalTrademarks": "Chen"
+      "legalTrademarks": "C"
     },
     "nsis": {
       "oneClick": false,
