@@ -4,10 +4,11 @@
   "private": true,
   "main": "src/electron-main.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "dev": "vite --port 9999",
+    "build": "vite build",
+    "serve": "vite preview --port 9999",
     "start": "electron .",
-    "dist": "vue-cli-service build && electron-builder",
+    "dist": "vite build && electron-builder",
     "ttt": "electron-builder"
   },
   "devDependencies": {
@@ -15,21 +16,16 @@
     "@vicons/fluent": "^0.13.0",
     "@vicons/tabler": "^0.13.0",
     "@vicons/utils": "^0.1.4",
-    "@vue/cli-plugin-babel": "~5.0.8",
-    "@vue/cli-plugin-router": "~5.0.8",
-    "@vue/cli-plugin-typescript": "~5.0.8",
-    "@vue/cli-plugin-vuex": "~5.0.8",
-    "@vue/cli-service": "~5.0.8",
-    "core-js": "^3.40.0",
+    "@vitejs/plugin-vue": "^5.2.0",
     "electron": "^33.3.1",
     "electron-builder": "^25.1.8",
     "naive-ui": "^2.41.0",
     "prettier": "^3.4.2",
     "sass": "^1.83.1",
-    "sass-loader": "^16.0.4",
     "style-loader": "^4.0.0",
     "typescript": "~5.7.2",
     "vfonts": "^0.0.3",
+    "vite": "^6.0.6",
     "vue": "^3.5.13",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.5.0",
@@ -41,6 +37,7 @@
     "icon": "public/favicon.ico",
     "copyright": "C © 2025",
     "compression": "maximum",
+    "afterSign": "src/electron-utils/afterSign.js",
     "asar": true,
     "win": {
       "icon": "public/favicon.ico",
@@ -66,7 +63,9 @@
     "extraResources": []
   },
   "dependencies": {
+    "asar": "^3.2.0",
     "asarmor": "^3.0.1",
-    "javascript-obfuscator": "^4.1.1"
+    "javascript-obfuscator": "^4.1.1",
+    "vite-plugin-electron": "^0.29.0"
   }
 }

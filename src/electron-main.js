@@ -28,6 +28,7 @@ app.on("ready", () => {
   if (app.isPackaged) {
     // 如果是打包好的就加载打包的 HTML 文件
     mainWindow.loadFile("dist/index.html");
+    mainWindow.webContents.openDevTools();
     mainWindow.removeMenu();
   } else {
     // 如果没有打包就直接从本地服务器加载

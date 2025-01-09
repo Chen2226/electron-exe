@@ -2,7 +2,7 @@
 const fs = require("fs");
 const path = require("path");
 const asar = require("asar");
-const asarmor = require("asarmor");
+// const asarmor = require("asarmor");
 const JavaScriptObfuscator = require("javascript-obfuscator"); //使用javascript-obfuscator代码混淆
 
 //获取指定文件夹下排除指定类型的文件
@@ -72,11 +72,11 @@ exports.default = async ({ appOutDir, packager }) => {
     fs.rmdirSync(appPath, { recursive: true });
     console.log("create new asar.");
     //防止被解压
-    const archive = await asarmor.open(asarPath);
-    archive.patch(); // apply default patches
-    archive.patch(asarmor.createBloatPatch(1314));
-    console.log(`applying asarmor patches to ${asarPath}`);
-    await archive.write(asarPath);
+    // const archive = await asarmor.open(asarPath);
+    // archive.patch(); // apply default patches
+    // archive.patch(asarmor.createBloatPatch(1314));
+    // console.log(`applying asarmor patches to ${asarPath}`);
+    // await archive.write(asarPath);
   } catch (err) {
     console.error(err);
   }
