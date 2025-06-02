@@ -1,9 +1,7 @@
-
 const fs = require("fs");
 const path = require("path");
-const asar = require("asar");
-// const asarmor = require("asarmor");
-const JavaScriptObfuscator = require("javascript-obfuscator"); //使用javascript-obfuscator代码混淆
+const asar = require("@electron/asar");
+const { execSync } = require('child_process');
 
 //获取指定文件夹下排除指定类型的文件
 function getFiles(dirpath, exclude) {
@@ -30,15 +28,11 @@ exports.default = async ({ appOutDir, packager }) => {
   try {
     const asarPath = path.join(packager.getResourcesDir(appOutDir), "app.asar");
     let appPath = path.join(packager.getResourcesDir(appOutDir), "app");
-    console.log("asarPath:", asarPath);
-    console.log("appPath:", appPath);
     if (fs.existsSync(asarPath)) {
-      //如果存在asar压缩包
       asar.extractAll(asarPath, appPath);
     }
-    //替换文件内容
 
-    let fileArrs = getFiles(appPath, [
+    let hl = [
       "node_modules",
       "dist",
       ".css",
@@ -46,21 +40,15 @@ exports.default = async ({ appOutDir, packager }) => {
       ".md",
       ".json",
       ".xml",
-    ]);
+      "chrome-win64"
+    ];
+    let fileArrs = getFiles(appPath, hl);
 
     for (let i = 0; i < fileArrs.length; i++) {
-      let con = fs.readFileSync(fileArrs[i], "utf-8");
-      let obfuscationResult = JavaScriptObfuscator.obfuscate(con, {
-        compact: true,
-        debugProtection: true,
-        disableConsoleOutput: true,
-        numbersToExpressions: true,
-        simplify: true,
-        stringArrayShuffle: true,
-        splitStrings: true,
-        stringArrayThreshold: 1,
-      });
-      fs.writeFileSync(fileArrs[i], obfuscationResult.getObfuscatedCode());
+      let shell = `electron ${appPath}/src/electron-utils/v8build.js ${fileArrs[i]}`;
+      console.log(shell)
+      let msg = execSync(shell);
+      console.log(msg.toString())
     }
 
     console.log("asar content replacement completed.");
@@ -69,14 +57,8 @@ exports.default = async ({ appOutDir, packager }) => {
       console.log("delete the original asar.");
     }
     await asar.createPackage(appPath, asarPath);
-    fs.rmdirSync(appPath, { recursive: true });
+    fs.rmSync(appPath, { recursive: true });
     console.log("create new asar.");
-    //防止被解压
-    // const archive = await asarmor.open(asarPath);
-    // archive.patch(); // apply default patches
-    // archive.patch(asarmor.createBloatPatch(1314));
-    // console.log(`applying asarmor patches to ${asarPath}`);
-    // await archive.write(asarPath);
   } catch (err) {
     console.error(err);
   }

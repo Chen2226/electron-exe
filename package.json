@@ -8,24 +8,23 @@
     "build": "vite build",
     "serve": "vite preview --port 9999",
     "start": "electron .",
-    "dist": "vite build && electron-builder",
-    "ttt": "electron-builder"
+    "dist": "vite build && electron-builder"
   },
   "devDependencies": {
     "@vicons/carbon": "^0.13.0",
     "@vicons/fluent": "^0.13.0",
     "@vicons/tabler": "^0.13.0",
     "@vicons/utils": "^0.1.4",
-    "@vitejs/plugin-vue": "^5.2.0",
-    "electron": "^33.3.1",
-    "electron-builder": "^25.1.8",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "electron": "^36.3.2",
+    "electron-builder": "^26.0.12",
     "naive-ui": "^2.41.0",
-    "prettier": "^3.4.2",
-    "sass": "^1.83.1",
+    "prettier": "^3.5.3",
+    "sass": "^1.89.1",
     "style-loader": "^4.0.0",
-    "typescript": "~5.7.2",
+    "typescript": "~5.8.3",
     "vfonts": "^0.0.3",
-    "vite": "^6.0.6",
+    "vite": "^6.3.5",
     "vue": "^3.5.13",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.5.0",
@@ -63,9 +62,8 @@
     "extraResources": []
   },
   "dependencies": {
-    "asar": "^3.2.0",
-    "asarmor": "^3.0.1",
-    "javascript-obfuscator": "^4.1.1",
+    "@electron/asar": "^3.4.1",
+    "bytenode": "^1.5.7",
     "vite-plugin-electron": "^0.29.0"
   }
 }
