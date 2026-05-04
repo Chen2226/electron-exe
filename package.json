@@ -15,19 +15,19 @@
     "@vicons/fluent": "^0.13.0",
     "@vicons/tabler": "^0.13.0",
     "@vicons/utils": "^0.1.4",
-    "@vitejs/plugin-vue": "^5.2.4",
-    "electron": "^36.3.2",
-    "electron-builder": "^26.0.12",
-    "naive-ui": "^2.41.0",
-    "prettier": "^3.5.3",
-    "sass": "^1.89.1",
+    "@vitejs/plugin-vue": "^6.0.6",
+    "electron": "^41.5.0",
+    "electron-builder": "^26.8.1",
+    "naive-ui": "^2.44.1",
+    "prettier": "^3.8.3",
+    "sass": "^1.99.0",
     "style-loader": "^4.0.0",
-    "typescript": "~5.8.3",
+    "typescript": "~6.0.3",
     "vfonts": "^0.0.3",
-    "vite": "^6.3.5",
-    "vue": "^3.5.13",
+    "vite": "^8.0.10",
+    "vue": "^3.5.33",
     "vue-class-component": "^8.0.0-0",
-    "vue-router": "^4.5.0",
+    "vue-router": "^5.0.6",
     "vuex": "^4.1.0"
   },
   "build": {
@@ -62,8 +62,8 @@
     "extraResources": []
   },
   "dependencies": {
-    "@electron/asar": "^3.4.1",
+    "@electron/asar": "^4.2.0",
     "bytenode": "^1.5.7",
-    "vite-plugin-electron": "^0.29.0"
+    "vite-plugin-electron": "^0.29.1"
   }
 }
