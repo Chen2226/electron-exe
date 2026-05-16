@@ -8,8 +8,7 @@
     "build": "vite build",
     "serve": "vite preview --port 9999",
     "start": "electron .",
-    "dist": "vite build && electron-builder",
-    "ttt": "electron-builder"
+    "dist": "vite build && electron-builder"
   },
   "devDependencies": {
     "@vicons/carbon": "^0.13.0",
