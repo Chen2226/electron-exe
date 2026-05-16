@@ -16,19 +16,19 @@
     "@vicons/fluent": "^0.13.0",
     "@vicons/tabler": "^0.13.0",
     "@vicons/utils": "^0.1.4",
-    "@vitejs/plugin-vue": "^5.2.0",
-    "electron": "^33.3.1",
-    "electron-builder": "^25.1.8",
-    "naive-ui": "^2.41.0",
-    "prettier": "^3.4.2",
-    "sass": "^1.83.1",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "electron": "^42.1.0",
+    "electron-builder": "^26.8.1",
+    "naive-ui": "^2.44.1",
+    "prettier": "^3.8.3",
+    "sass": "^1.99.0",
     "style-loader": "^4.0.0",
-    "typescript": "~5.7.2",
+    "typescript": "~6.0.3",
     "vfonts": "^0.0.3",
-    "vite": "^6.0.6",
-    "vue": "^3.5.13",
+    "vite": "^8.0.13",
+    "vue": "^3.5.34",
     "vue-class-component": "^8.0.0-0",
-    "vue-router": "^4.5.0",
+    "vue-router": "^5.0.7",
     "vuex": "^4.1.0"
   },
   "build": {
@@ -64,8 +64,8 @@
   },
   "dependencies": {
     "asar": "^3.2.0",
-    "asarmor": "^3.0.1",
-    "javascript-obfuscator": "^4.1.1",
-    "vite-plugin-electron": "^0.29.0"
+    "asarmor": "^3.0.2",
+    "javascript-obfuscator": "^5.4.2",
+    "vite-plugin-electron": "^0.29.1"
   }
 }
